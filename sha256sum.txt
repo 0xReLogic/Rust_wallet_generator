@@ -1,0 +1,1 @@
+9bc947d7064779421b6daf3f932ba66ab7319a6b2e714400daf57bbf2a519dc9  release/rust_wallet_genenerator.exe

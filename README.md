@@ -40,6 +40,20 @@ This project is built on the principle of full transparency.
 
 We encourage security researchers and the community to review the codebase.
 
+## Quick Start (For Beginners)
+
+### Option 1: Download Pre-built Binary (Easiest)
+1. **Download** the latest release from [GitHub Releases](https://github.com/0xReLogic/Rust_wallet_generator/releases)
+2. **Extract** the ZIP file to a folder
+3. **Open Command Prompt/PowerShell** in that folder
+4. **Run the GUI** (recommended for beginners):
+   ```cmd
+   rust_wallet_genenerator.exe --gui
+   ```
+
+### Option 2: Build from Source
+Follow the installation instructions below.
+
 ## Installation
 
 ### Prerequisites
@@ -56,7 +70,7 @@ We encourage security researchers and the community to review the codebase.
     ```bash
     cargo build --release
     ```
-    The binary will be located at `target/release/rust_wallet_generator`.
+    The binary will be located at `target/release/rust_wallet_genenerator`.
 
 ## Binary Releases and Verification
 
@@ -67,10 +81,85 @@ To ensure the integrity of the downloaded files, we provide a `sha256sum.txt` fi
 ```bash
 # Example for Linux
 sha256sum -c sha256sum.txt --ignore-missing
+
+# Example for Windows PowerShell
+Get-FileHash -Algorithm SHA256 release/rust_wallet_genenerator.exe | ForEach-Object { if ($_.Hash.ToLower() -eq (Get-Content sha256sum.txt | ForEach-Object { $_.Split()[0] })) { Write-Host "Checksum verified successfully!" } else { Write-Host "Checksum verification failed!" } }
+```
+
+## How to Run the Executable (.exe) File
+
+### Windows Users
+
+#### Method 1: Using Command Prompt/PowerShell (Recommended)
+1. **Download the binary** from [GitHub Releases](https://github.com/0xReLogic/Rust_wallet_generator/releases)
+2. **Extract the ZIP file** to a folder of your choice
+3. **Open Command Prompt or PowerShell**:
+   - Press `Win + R`, type `cmd` or `powershell`, then press Enter
+   - Or right-click on the folder containing the .exe file and select "Open in Terminal"
+4. **Navigate to the folder** containing the .exe file:
+   ```cmd
+   cd "C:\path\to\your\extracted\folder"
+   ```
+5. **Run the executable**:
+   ```cmd
+   # For GUI mode (recommended for beginners)
+   rust_wallet_genenerator.exe --gui
+   
+   # For CLI mode
+   rust_wallet_genenerator.exe generate -t eth
+   ```
+
+#### Method 2: Double-Click (Not Recommended)
+- **Warning**: Double-clicking may not work properly due to Windows security settings
+- If you get a security warning, click "More info" → "Run anyway"
+- The program will open in CLI mode by default
+
+#### Method 3: Right-Click Method
+1. Right-click on `rust_wallet_genenerator.exe`
+2. Select "Open with" → "Command Prompt" or "PowerShell"
+3. The terminal will open in the correct directory automatically
+
+### Troubleshooting Windows Issues
+
+#### "Windows protected your PC" Error
+1. Right-click on the .exe file
+2. Select "Properties"
+3. Check "Unblock" at the bottom of the properties window
+4. Click "Apply" → "OK"
+5. Try running again
+
+#### "This app can't run on your PC" Error
+1. Make sure you downloaded the correct version (x64 for 64-bit Windows)
+2. Try running as Administrator:
+   - Right-click on the .exe file
+   - Select "Run as administrator"
+
+#### "Command not found" Error
+1. Make sure you're in the correct directory containing the .exe file
+2. Use `dir` or `ls` to list files and verify the .exe is there
+3. Type the exact filename: `rust_wallet_genenerator.exe`
+
+### Linux Users
+```bash
+# Make the file executable
+chmod +x rust_wallet_genenerator
+
+# Run the program
+./rust_wallet_genenerator --gui
+```
+
+### macOS Users
+```bash
+# Remove quarantine attribute
+xattr -d com.apple.quarantine rust_wallet_genenerator
+
+# Run the program
+./rust_wallet_genenerator --gui
 ```
 
 ## Usage
 
+### From Source (Development)
 ```bash
 # Generate a new Ethereum wallet and display it
 cargo run -- generate -t eth
@@ -83,6 +172,30 @@ cargo run -- batch -t btc --count 10
 
 # Import a wallet from a seed phrase
 cargo run -- import -t eth --phrase "your twelve word seed phrase goes here"
+```
+
+### From Binary (.exe file)
+```bash
+# GUI Mode (Recommended for beginners)
+rust_wallet_genenerator.exe --gui
+
+# Generate a new Ethereum wallet
+rust_wallet_genenerator.exe generate -t eth
+
+# Generate a Solana wallet with seed phrase
+rust_wallet_genenerator.exe generate -t sol --seed-phrase
+
+# Generate and save encrypted wallet
+rust_wallet_genenerator.exe generate -t eth --save --encrypt --password "YourPassword"
+
+# Batch generate 5 Bitcoin wallets
+rust_wallet_genenerator.exe batch -t btc --count 5
+
+# Import wallet from seed phrase
+rust_wallet_genenerator.exe import -t eth --phrase "your twelve word seed phrase goes here"
+
+# Show help
+rust_wallet_genenerator.exe --help
 ```
 
 ## Compatibility & Verification
@@ -109,6 +222,29 @@ All generated wallets are **100% compatible** with popular wallet applications:
 cargo run --release -- --gui
 ```
 Run the native GUI for easy wallet generation and management.
+
+## Frequently Asked Questions (FAQ)
+
+### Q: How do I run the .exe file on Windows?
+A: See the detailed guide in the [How to Run the Executable](#how-to-run-the-executable-exe-file) section above.
+
+### Q: I get "Windows protected your PC" error, what should I do?
+A: Right-click the .exe file → Properties → Check "Unblock" → Apply → OK, then try running again.
+
+### Q: The program doesn't start when I double-click it
+A: Use Command Prompt/PowerShell instead. Right-click the folder → "Open in Terminal" → run `rust_wallet_genenerator.exe --gui`
+
+### Q: How do I verify the binary is safe?
+A: Use the checksum verification method shown in the [Binary Releases and Verification](#binary-releases-and-verification) section.
+
+### Q: Can I use this offline?
+A: Yes! This tool is 100% offline and doesn't require any internet connection.
+
+### Q: Which wallet types are supported?
+A: Ethereum (ETH), Bitcoin (BTC), Solana (SOL), Polygon (MATIC), and Avalanche (AVAX).
+
+### Q: How do I backup my wallets?
+A: Always save your seed phrases securely. The tool can export wallets to encrypted files for additional security.
 
 ## Support My Work
 If you find this tool useful, please consider supporting its development. Thank you!
