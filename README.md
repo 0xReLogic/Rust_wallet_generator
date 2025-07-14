@@ -56,7 +56,7 @@ We encourage security researchers and the community to review the codebase.
     ```bash
     cargo build --release
     ```
-    The binary will be located at `target/release/rust_wallet_gen`.
+    The binary will be located at `target/release/rust_wallet_generator`.
 
 ## Binary Releases and Verification
 
