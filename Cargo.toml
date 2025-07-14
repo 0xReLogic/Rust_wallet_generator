@@ -1,0 +1,41 @@
+[package]
+name = "rust_wallet_genenerator"
+version = "0.1.0"
+edition = "2021"
+authors = ["0xReLogic <hi@0xrelogic.my.id>"]
+description = "A modern, up-to-date, and secure offline cryptocurrency wallet generator with native GUI and CLI, built with the latest Rust ecosystem."
+license = "MIT"
+repository = "https://github.com/0xReLogic/Rust_wallet_generator"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+k256 = { version = "0.13", features = ["ecdsa"] }
+secp256k1 = { version = "0.28", features = ["rand"] }
+bip39 = "2.0"
+bitcoin = { version = "0.30", features = ["rand"] }
+ed25519-dalek = "1.0"
+qr2term = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rand = "0.8"
+rand_core = "0.6"
+dirs = "5.0"
+anyhow = "1.0"
+thiserror = "1.0"
+colored = "2.0"
+bs58 = "0.5"
+chrono = { version = "0.4", features = ["serde"] }
+sha3 = "0.10"
+hex = "0.4"
+tokio = { version = "1.0", features = ["full"] }
+aes = "0.8"
+aes-gcm = "0.10"
+pbkdf2 = "0.12"
+qrcode = "0.12"
+image = "0.23" 
+sha2 = "0.10"
+iced = { version = "0.12", features = ["canvas", "image"] }
+arboard = "3.2" 
+hd-wallet = "0.6" 
+ethers = "2.0"
+slip10 = "0.1" 
