@@ -223,6 +223,10 @@ cargo run --release -- --gui
 ```
 Run the native GUI for easy wallet generation and management.
 
+![Rust Wallet Generator GUI](https://imgur.com/RkutMeG.png)
+
+*Modern, user-friendly interface for secure wallet generation*
+
 ## Frequently Asked Questions (FAQ)
 
 ### Q: How do I run the .exe file on Windows?
