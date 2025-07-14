@@ -15,7 +15,7 @@ In a world of complex, online-dependent wallet tools, Rust Wallet Generator stan
 
 *   **100% Offline Operation**: Generate, encrypt, and manage wallets on a completely air-gapped machine. The tool makes zero network requests, ensuring your private keys never touch the internet.
 *   **Security First, Built in Rust**: Leverages Rust's memory safety and performance to eliminate common vulnerabilities found in other languages. Your security is guaranteed by the power of modern, systems-level code.
-*   **Fully Transparent & Auditable**: Every line of code is open-source and available for review. We use well-vetted, standard cryptographic libraries. You don't have to trust us—you can verify the code yourself.
+*   **Fully Transparent & Auditable**: Every line of code is open-source and available for review. We use well-vetted, standard cryptographic libraries. You don't have to trust us you can verify the code yourself.
 *   **Blazing Fast**: Generate single or batch wallets in an instant. No waiting, no delays.
 *   **No Dependencies, No Bloat**: Compiles to a single, static binary that you can run anywhere. No need to install complex frameworks or runtimes.
 
